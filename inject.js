@@ -1,4 +1,8 @@
-(function() {
+(function boot() {
+  if (typeof(window) === "undefined" || typeof(safari) === "undefined") {
+    return setTimeout(boot, 500);
+  }
+
   if (window.top !== window && location.hostname.match(/\.?youtube\.com$/)) {
     return;
   }
